@@ -23,11 +23,47 @@
       display: flex;
       flex-direction: row;
       justify-content: space-around;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+      max-width: 1200px;
+    }
+    .tsd-index-content h3 {
+      margin: 0 -20px 10px -20px;
+      padding: 0 20px 10px 20px;
+      border-bottom: 1px solid #eee;
     }
     .tsd-index-section {
       display: flex;
       flex-direction: column;
       padding: 10px 30px;
+    }
+    ul.tsd-index-list {
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      -ms-column-count: 2;
+      column-count: 2;
+      -webkit-column-gap: 20px;
+      -moz-column-gap: 20px;
+      -ms-column-gap: 20px;
+      column-gap: 20px;
+      padding: 0;
+      list-style: none;
+      line-height: 1.5em;
+    }
+    .tsd-index-content a, 
+    .tsd-index-content .tsd-parent-kind-module a {
+      color: #9600ff;
+    }
+    .tsd-index-content .tsd-parent-kind-class a {
+      color: #4da6ff;
+    }
+    .tsd-index-content a {
+      text-decoration: none;
+    }
+    .tsd-index-content a:hover {
+      text-decoration: underline;
     }
   </style>
 
@@ -45,31 +81,6 @@
       Coveo.init(document.body);
       
     });
-
-
-      //var githubioregex = /^https:\/\/coveo\.github\.io\/search-ui\/.*/i;
-      /*
-      $('body').on('deferredQuerySuccess', (e, args) => {
-        var results = args.results.results;
-        var cont = true;
-        results.every((res) => {
-          if (githubioregex.test(res.clickUri)) { // Github.io
-            displayGithubIoHelpBox(res);
-            cont = false;
-          }
-          return cont;
-        });
-      });
-
-    });
-
-    function displayGithubIoHelpBox(result) {
-      $('.hackathon-help-panel').empty();
-      $.ajax(result.clickUri).then((docContent) => {
-        let d = $('<div/>').html(docContent);
-        let helpPanel = $('<div class="hackathon-help-panel">').html($('.tsd-index-panel', d).html());
-        $('.coveo-search-section').after(helpPanel);
-      });*/
   </script>
 </head>
 
@@ -88,7 +99,7 @@
     <div class="CoveoSearchbox" data-enable-omnibox="true"></div>
   </div>
 
-  <div class="CoveoHelpPanel"></div>
+  <div class="CoveoHelpPanel" data-matches="{values: [{regex: '/asdasdasd/', selector : '.tsd-asd-as-d'}, {}]}"></div>
 
   <div id="coveo-main-section" class="coveo-main-section">
     <div id="coveo-facet-column" class="coveo-facet-column">

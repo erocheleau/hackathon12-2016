@@ -10,7 +10,7 @@ import IQueryResult = Coveo.IQueryResult;
 import Dom = Coveo.Dom;
 
 export interface IHelpPanelOptions {
-  matches: IHelpPanelMatch[]
+  // matches: IHelpPanelMatch[]
 }
 
 export interface IHelpPanelMatch {
@@ -24,7 +24,7 @@ export class HelpPanel extends Component {
   static JSUIDOCREGEX = /^https:\/\/coveo\.github\.io\/search-ui\/.*/i;
 
   static options: IHelpPanelOptions = {
-    matches: ComponentOptions.buildCustomOption<IHelpPanelMatch[]>((value: string) => HelpPanel.parseMatches(value))
+    // matches: ComponentOptions.buildCustomOption<IHelpPanelMatch[]>((value: string) => HelpPanel.parseMatches(value))
   }
 
   constructor(public element: HTMLElement, public options: IHelpPanelOptions, public bindings: IComponentBindings) {
@@ -43,6 +43,8 @@ export class HelpPanel extends Component {
       if (HelpPanel.JSUIDOCREGEX.test(result.clickUri)) { //Github.io
         let rendered = this.handleGithubIo(result).then((Dom) => {
           if (Dom) {
+            this.fixLinks(Dom, result.clickUri);
+            debugger;
             this.element.innerHTML = Dom.el.innerHTML;
           }
         }, (reason) => {
@@ -76,8 +78,15 @@ export class HelpPanel extends Component {
     });
   }
 
-  public static parseMatches(matches: string): IHelpPanelMatch[] {
-    return null;
+  private fixLinks(el: Dom, rootUrl: string): Dom {
+    el.findAll('a').reduce((prev: HTMLElement, anchor: HTMLElement): HTMLElement=> {
+      let link = anchor.getAttribute('href');
+      if(link && !(/^http/i).test(link)) {
+        anchor.setAttribute('href', `${rootUrl}/../${link}`);
+      }
+      return anchor;
+    })
+    return el;
   }
 }
 Initialization.registerAutoCreateComponent(HelpPanel);
