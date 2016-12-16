@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>search-ui-seed</title>
+
+  <link rel="stylesheet" href="css/CoveoFullSearchNewDesign.css" />
+  <link rel="stylesheet" href="css/coveoextension.css" />
+
+  <script src="js/coveo.extension.js"></script>
+  <script src="js/templatesNew.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+
+  <style>
+    .hackathon-help-panel {
+      border-top: 1px solid #BCC3CA;
+      border-bottom: 1px solid #BCC3CA;
+      background-color: #F7F8F9;
+    }
+    .tsd-index-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+    .tsd-index-section {
+      display: flex;
+      flex-direction: column;
+      padding: 10px 30px;
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      Coveo.SearchEndpoint.endpoints["default"] = new Coveo.SearchEndpoint({
+        restUri: 'https://cloudplatform.coveo.com/rest/search',
+        anonymous: false,
+        accessToken: '7b9b9300-3901-437b-bafd-51ae596f1b16',
+        queryStringArguments: {
+          searchHub: 'ExternalSearch'
+        }
+      });
+
+      Coveo.init(document.body);
+      
+    });
+
+
+      //var githubioregex = /^https:\/\/coveo\.github\.io\/search-ui\/.*/i;
+      /*
+      $('body').on('deferredQuerySuccess', (e, args) => {
+        var results = args.results.results;
+        var cont = true;
+        results.every((res) => {
+          if (githubioregex.test(res.clickUri)) { // Github.io
+            displayGithubIoHelpBox(res);
+            cont = false;
+          }
+          return cont;
+        });
+      });
+
+    });
+
+    function displayGithubIoHelpBox(result) {
+      $('.hackathon-help-panel').empty();
+      $.ajax(result.clickUri).then((docContent) => {
+        let d = $('<div/>').html(docContent);
+        let helpPanel = $('<div class="hackathon-help-panel">').html($('.tsd-index-panel', d).html());
+        $('.coveo-search-section').after(helpPanel);
+      });*/
+  </script>
+</head>
+
+<body id="search" class="CoveoSearchInterface" data-enable-history="true" data-design="new">
+
+  <div class="CoveoAnalytics" data-search-hub="ExternalSearch"></div>
+
+  <div class="CoveoFoldingForThread" data-child-field="@sffeeditemid" data-field="@sffeeditemid" data-parent-field="@sfid"
+    data-range="2" data-rearrange="date ascending" data-tab="Chatter" data-expand-expression="@objecttype==(FeedItem, FeedComment)"></div>
+
+  <div class="coveo-tab-section">
+  </div>
+
+  <div class="coveo-search-section">
+    <div class="CoveoSettings" data-include-in-menu=".CoveoShareQuery,.CoveoPreferencesPanel"></div>
+    <div class="CoveoSearchbox" data-enable-omnibox="true"></div>
+  </div>
+
+  <div class="CoveoHelpPanel"></div>
+
+  <div id="coveo-main-section" class="coveo-main-section">
+    <div id="coveo-facet-column" class="coveo-facet-column">
+      <div class="CoveoFacet" id="sourceFacet" data-id="sourceFacet" data-title="Coveo Sites" data-field="@syssource" data-number-of-values="15"
+        data-enable-settings="false" data-custom-sort="ohclouden,Web Scraper - ohcloudfr,ohces70en,ohces70fr,ohces65en,ohces65fr,Confluence - Developers,Answers,Salesforce - Knowledge - Coveo Support,Web - JsSearchRef,Web Scraper - apisitecore30,apices70,apices65,Web - TechBlog"
+        data-enable-facet-search="false" data-available-sorts="custom,occurrences,score,alphaAscending,alphaDescending" data-preserve-position="false"
+        data-enable-collapse="false" data-enable-more-less="false"></div>
+
+      <div class="CoveoFacet" id="spaceFacet" data-id="spaceFacet" data-title="Developers Spaces" data-field="@syscfspacename"
+        data-sort-criteria="score" data-number-of-values="5" data-enable-collapse="false" data-enable-settings="false" data-preserve-position="false">
+      </div>
+
+      <div class="CoveoFacet" data-id="TagsFacet" data-title="Tags" data-field="@tags" data-allow-toggling-operator="true" data-number-of-values="5"
+        data-enable-collapse="false" data-preserve-position="false" data-enable-settings="false"></div>
+
+      <div class="CoveoFacet" id="audienceFacet" data-id="audienceFacet" data-title="Audiences" data-field="@audience" data-custom-sort="User,Administrator,Developer,Anyone"
+        data-enable-facet-search="false" data-enable-collapse="false" data-preserve-position="false" data-enable-settings="false"></div>
+
+    </div>
+    <div class="coveo-results-column">
+      <div class="CoveoShareQuery"></div>
+      <div class="CoveoPreferencesPanel">
+        <div class="CoveoResultsPreferences"></div>
+        <div class="CoveoResultsFiltersPreferences"></div>
+      </div>
+      <div class="CoveoTriggers"></div>
+      <div class="CoveoBreadcrumb"></div>
+      <div class="coveo-results-header">
+        <div class="coveo-summary-section">
+          <span class="CoveoQuerySummary"></span>
+          <span class="CoveoQueryDuration"></span>
+        </div>
+        <div class="coveo-sort-section">
+          <span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance"></span>
+          <span class="CoveoSort" data-sort-criteria="@SfLastModifiedDate descending, @SfLastModifiedDate ascending" data-caption="Date"></span>
+        </div>
+      </div>
+      <div class="CoveoHiddenQuery"></div>
+      <div class="CoveoDidYouMean"></div>
+      <div class="CoveoErrorReport" data-pop-up="false"></div>
+      <div class="CoveoResultList" data-wait-animation="fade" data-auto-select-fields-to-include="false">
+      </div>
+
+      <div class="CoveoPager"></div>
+      <div class="CoveoLogo"></div>
+
+    </div>
+
+  </div>
+</body>
+
+
+</html>

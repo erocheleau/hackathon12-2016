@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search Coveo Technical Documentation</title>
+    <meta about="Search all Coveo technical documentation at once." />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0,  maximum-scale=1.0">
+
+    <link rel="search" type="application/opensearchdescription+xml" href="https://s3.amazonaws.com/coveostatic/opensearchdescdoc.xml?4"/>
+    <link rel="shortcut icon" type="image/png" href="https://s3.amazonaws.com/coveostatic/icon-search.png" />
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Lato:300,400,700'>
+
+    <link rel="stylesheet" type="text/css" href="https://s3.amazonaws.com/coveostatic/coveo-search-ui_V1.1550.5/bin/css/CoveoFullSearchNewDesign.css"/>
+    <link rel="stylesheet" type="text/css" href="https://s3.amazonaws.com/coveostatic/community-unified-navigation/css/styles.css" media="screen" charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="CSS/TechDoc2.css?9" media="screen" charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://s3.amazonaws.com/coveostatic/coveo-search-ui_V1.1550.5/bin/js/CoveoJsSearch.Dependencies.js"></script>
+    <script type="text/javascript" src="https://s3.amazonaws.com/coveostatic/coveo-search-ui_V1.1550.5/bin/js/CoveoJsSearch.min.js"></script>
+    <script type="text/javascript" src="JS/js-cookie.js"></script>
+    <script type="text/javascript" src="JS/TechDoc2.js?17"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+
+</head>
+
+<body id="search" class='CoveoSearchInterface' data-design="new" data-enable-history="true" data-enable-debug-info="true"
+    data-enable-automatic-responsive-mode="false">
+    <div class="CoveoAnalytics" data-search-hub="ExternalSearch"></div>
+
+    <header>
+        <div class="upHeader clear">
+            <div class="logos">
+                <a href="http://www.coveo.com" class="logo" title="Coveo community"></a>
+                <h3><a href="https://support.coveo.com/">Community</a></h3>
+            </div>
+
+            <h1 class="currentSiteName"><em>Support</em> <span>Menu<i class="arrow"></i></span></h1>
+            <nav>
+                <ul class="menu floated">
+                    <li><a id="jsSupport" href="https://support.coveo.com">Support</a></li>
+                    <li><a id="jsProductDocs" href="https://onlinehelp.coveo.com">Product docs</a></li>
+                    <li><a id="jsDevDocs" href="https://developers.coveo.com">Developer docs</a></li>
+                    <li><a id="jsAnswers" href="https://answers.coveo.com">Answers</a></li>
+                    <li><a id="jsTraining" href="http://www.coveo.com/training">Training</a></li>
+                </ul>
+                <ul class="externalbox with-sub">
+                    <li>
+                        <a href="#" class="sub">More <i class="arrow"></i></a>
+                        <ul>
+                            <li><a d="jsCloudAdminV1" href="https://cloud.coveo.com">Cloud V1 Administration Console</a></li>
+                            <li><a d="jsCloudAdminV2" href="https://platform.cloud.coveo.com">Cloud V2 Administration Console</a></li>
+                            <li><a d="jsTechBlog" href="http://source.coveo.com">Technical Blog</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="info-perso">
+                <ul class="floated loginregister">
+                    <li><a href="#login">Log in</a></li>
+                    <li><a href="#register">Register</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="bottomHeader">
+        </div>
+
+    </header>
+
+    <div id="searchBoxWrapper">
+        <div class='coveo-search-section'>
+            <div class="CoveoSettings"></div>
+            <div id="searchBox" class="CoveoSearchbox" data-enable-omnibox="true" data-inline="false" data-enable-wildcards="true" data-enable-search-as-you-type="false"
+                data-enable-reveal-query-suggest-addon="true" data-enable-query-syntax="true" data-enable-field-addon="true"></div>
+        </div>
+    </div>
+
+    <div class="coveo-main-section">
+        <div id="leftPanel">
+            <div id="facetColumn" class="coveo-facet-column">
+
+                <div id="userProfile" data-title="Set Your User Profile">
+                    <div class="coveo-facet-header">
+                        <div class="coveo-facet-header-title">User Profile</div>
+                    </div>
+                    <div class="dropdown">
+                        <button id="selectSolution" class="dropbtn" title="Filter to only show results applicable to the selected solution">All Coveo Solutions</button>
+                        <ul id="userProfileSolutions" class="close">
+                            <li id="AllSolutions" title="Results for all Coveo solutions (no filter applied)">All Coveo Solutions</li>
+                            <li id="C4SFV2" title="Results for Coveo for Salesforce V2 with JavaScript Search 1.0 and Cloud V1 stuff">Coveo for Salesforce V2</li>
+                            <li id="C4SFV1" title="Results for Coveo for Salesforce V1 with JavaScript Search 0.9 and Cloud V1 stuff">Coveo for Salesforce V1</li>
+                            <li id="C4SC40Cloud" title="Results for Coveo for Sitecore 4.0 with JavaScript Search 1.0 and Cloud V2 stuff">Coveo for Sitecore 4.0 Cloud</li>
+                            <li id="C4SC40OnPrem" title="Results for Coveo for Sitecore 4.0 with JavaScript Search 1.0 and Coveo Enterprise Search 7.0 stuff">Coveo for Sitecore 4.0 On-Premises</li>
+                            <li id="C4SC30" title="Results for Coveo for Sitecore 3.0 with JavaScript Search 0.9 and Coveo Enterprise Search 7.0 stuff">Coveo for Sitecore 3.0</li>
+                            <li id="CCV2PaaS" title="Results for Coveo Cloud V2 with JavaScript Search 1.0 stuff">Coveo Cloud V2</li>
+                            <li id="CES70" title="Results for Coveo Enterprise Search 7.0 on-premises stuff">Coveo Enterprise Search 7.0</li>
+                            <li id="CES65" title="Results for Coveo Enterprise Search 6.5 on-premises stuff">Coveo Enterprise Search 6.5</li>
+                        </ul>
+                        <button id="selectLanguage" class="dropbtn" title="Filter to only show results in the selected language">All Languages</button>
+                        <ul id="userProfileLanguages" class="close">
+                            <li id="AllLanguages" title="Results in all languages">All Languages</li>
+                            <li id="EN" title="Results in English only">English</li>
+                            <li id="FR" title="Results French only">French - Français</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="webui-popover-content">
+                    <p>Tell this page to remember to filter out content that is not relevant to you. </p>
+                    <p>Select the Coveo solution you use and the content language you prefer.</p>
+                    <button id="userProfilePopoverGotIt">Got It</button>
+                </div>
+
+                <div class="CoveoFacet" id="sourceFacet" data-id="sourceFacet" data-title="Coveo Sites" data-field="@syssource" data-number-of-values="15"
+                    data-enable-settings="false" data-custom-sort="ohclouden,Web Scraper - ohcloudfr,ohces70en,ohces70fr,ohces65en,ohces65fr,Confluence - Developers,Answers,Salesforce - Knowledge - Coveo Support,Web - JsSearchRef,Web Scraper - apisitecore30,apices70,apices65,Web - TechBlog"
+                    data-enable-facet-search="false" data-available-sorts="custom,occurrences,score,alphaAscending,alphaDescending"
+                    data-preserve-position="false" data-enable-collapse="false" data-enable-more-less="false"></div>
+
+                <div class="CoveoFacet" id="spaceFacet" data-id="spaceFacet" data-title="Developers Spaces" data-field="@syscfspacename"
+                    data-sort-criteria="score" data-number-of-values="5" data-enable-collapse="false" data-enable-settings="false"
+                    data-preserve-position="false">
+                </div>
+
+                <div class="CoveoFacet" data-id="TagsFacet" data-title="Tags" data-field="@tags" data-allow-toggling-operator="true" data-number-of-values="5"
+                    data-enable-collapse="false" data-preserve-position="false" data-enable-settings="false"></div>
+
+                <div class="CoveoFacet" id="audienceFacet" data-id="audienceFacet" data-title="Audiences" data-field="@audience" data-custom-sort="User,Administrator,Developer,Anyone"
+                    data-enable-facet-search="false" data-enable-collapse="false" data-preserve-position="false" data-enable-settings="false"></div>
+
+            </div>
+            <div id="showHideLeftPanel" title="Show|hide facets"><i class="fa-chevron-right fa" aria-hidden="true"></i></div>
+        </div>
+
+        <div class="coveo-results-column">
+            <div class="CoveoExportToExcel" data-number-of-results="100"></div>
+            <div class="CoveoBreadcrumb"></div>
+            <div class="coveo-results-header">
+                <div class="coveo-summary-section">
+                    <span class="CoveoQuerySummary"></span>
+                    <span class="CoveoQueryDuration"></span>
+                </div>
+                <div class="coveo-sort-section">
+                    <span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance"></span>
+                    <span class="CoveoSort" data-sort-criteria="date descending,date ascending" data-caption="Date"></span>
+                </div>
+            </div>
+            <div class="CoveoHiddenQuery"></div>
+            <div class="CoveoDidYouMean"></div>
+            <div class="CoveoErrorReport" data-pop-up="false"></div>
+
+            <div id="noResults">
+                <ul class="coveo-query-summary-no-results-string">
+                    <li id="clearFacets" class="hidden"><span>Clear selected facets</span> </li>
+                    <li id="clearUserProfileSolution" class="hidden"><span>Clear selected User Profile Solution</span> </li>
+                    <li id="clearUserProfileLanguage" class="hidden"><span>Clear selected User Profile Language</span> </li>
+                </ul>
+            </div>
+
+            <div class="CoveoResultList" data-wait-animation="fade" data-auto-select-fields-to-include="true">
+
+                <!--HTML Result templates-->
+                <script type="text/html" id="onlinehelp" class="result-template" data-condition="raw.syssource=='ohclouden' || raw.syssource=='ohces70en' || raw.syssource=='ohces65en' || raw.syssource=='Web Scraper - ohcloudfr' || raw.syssource=='ohces70fr' || raw.syssource=='ohces65fr'">
+            <div class="coveo-result-frame">
+              <div class="coveo-result-row">
+                <div class="coveo-result-cell" style="width:16px; text-align:center; padding-top:5px">
+                  <div class='coveo-icon coveo-site-icon-onlinehelp' title="onlinehelp.coveo.com topic"></div>
+                </div>
+                <div class="coveo-result-cell" style="padding-left:15px;">
+                  <div class="coveo-result-row">
+                    <div class="coveo-result-cell" style="font-size:18px;">
+                      <span class="CoveoFieldValue platformVersionBadge" title="Coveo Platform Version" data-field="@platformversion"></span>
+                      <a class="CoveoResultLink"></a>
+                      <div class="CoveoQuickview"></div></div>
+                  </div>
+                  <div class="coveo-result-row">
+                    <div class="coveo-result-cell">
+                      <span class="CoveoExcerpt"></span>
+                    </div>
+                  </div>
+                  <div class="coveo-result-row">
+                    <div class="coveo-result-cell">
+                      <div class="CoveoFieldValue ohBreadcrumb" data-field="@ohbreadcrumb" data-split-values="false" data-html-value="true"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </script>
+
+<script type="text/html" id="developers" class="result-template" data-condition="raw.syssource=='Confluence - Developers' || raw.source=='Web - JsSearchRef'">
+            <div class="coveo-result-frame">
+              <div class="coveo-result-row">
+                <div class="coveo-result-cell" style="width:16px; text-align:center; padding-top:5px">
+                  <div class="coveo-icon coveo-site-icon-developers" title="developers.coveo.com topic"></div>
+                </div>
+                <div class="coveo-result-cell" style="padding-left:15px;">
+                  <div class="coveo-result-row">
+                    <div class="coveo-result-cell" style="font-size:18px;">
+                      <a class="CoveoResultLink"></a>
+                      <div class="CoveoQuickview"></div>
+                    </div>
+                    <div class="coveo-result-cell" style="width:150px; text-align:right">
+                      <span class="CoveoFieldValue" data-field="@date" data-helper="dateTime" data-helper-options-include-time-if-this-week="false"></span>
+                    </div>
+                  </div>
+                  <div class="coveo-result-row">
+                    <div class="coveo-result-cell">
+                      <span class="CoveoExcerpt"></span>
+                    </div>
+                  </div>
+                  <div class="coveo-result-row">
+                    <div class="coveo-result-cell">
+                      <div class="CoveoPrintableUri"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </script>
+
+<script type="text/html" id="answers" class="result-template" data-condition="raw.syssource=='Answers'">
+            <div class="coveo-result-frame">
+              <div class="coveo-result-row">
+                <div class="coveo-result-cell" style="width:16px; text-align:center; padding-top:5px">
+                  <div class="coveo-icon coveo-site-icon-answers" title="answers.coveo.com page"></div>
+                </div>
+                <div class="coveo-result-cell" style="padding-left:15px;">
+                  <div class="coveo-result-row">
+                    <div class="coveo-result-cell" style="font-size:18px;">
+                      <a class="CoveoResultLink"></a>
+                      <div class="CoveoQuickview"></div>
+                    </div>
+                    <div class="coveo-result-cell" style="width:150px; text-align:right">
+                      <span class="CoveoFieldValue" data-field="@date" data-helper="dateTime" data-helper-options-include-time-if-this-week="false"></span>
+                    </div>
+                  </div>
+                  <div class="coveo-result-row">
+                    <div class="coveo-result-cell">
+                      <span class="CoveoExcerpt"></span>
+                    </div>
+                  </div>
+                  <div class="coveo-result-row">
+                    <div class="coveo-result-cell">
+
+                      <div class="answers-score" title="Answers">
+                        <div class="icon-bulb" title="Answers"></div>
+                        <span class="CoveoFieldValue" data-field="@numberofanswers" data-helper="number" ></span>
+                      </div>
+                      <div class="answers-score">
+                        <div class="icon-comments" title="Comments"></div>
+                        <span class="CoveoFieldValue" data-field="@nbofcomments" data-helper="number" ></span>
+                      </div>
+                      <div class="answers-score">
+                        <div class="icon-thumbup" title="Votes"></div>
+                        <span class="CoveoFieldValue" data-field="@questionvotes" data-helper="number" ></span>
+                      </div>
+                      <div class="answers-score">
+                        <div class="icon-goodanswer" title="Accepted Answer"></div>
+                        <span class="CoveoFieldValue" data-field="@acceptedanswer" data-helper="number" ></span>
+                      </div>
+
+                      <div class="field-table">
+                        <span class="CoveoFieldValue CoveoTags" data-field="@tags" data-facet="TagsFacet" data-split-values="true"></span>
+                      </div>
+                      <div style="clear:both;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </script>
+
+<script type="text/html" id="techblog" class="result-template" data-condition="raw.syssource=='Web - TechBlog'">
+            <div class="coveo-result-frame">
+              <div class="coveo-result-row">
+                <div class="coveo-result-cell" style="width:16px; text-align:center; padding-top:5px">
+                  <div class="coveo-icon coveo-site-icon-blog" title="source.coveo.com topic"></div>
+                </div>
+                <div class="coveo-result-cell" style="padding-left:15px;">
+                  <div class="coveo-result-row">
+                    <div class="coveo-result-cell" style="font-size:18px;">
+                      <a class="CoveoResultLink"></a>
+                      <div class="CoveoQuickview"></div>
+                    </div>
+                    <div class="coveo-result-cell" style="width:150px; text-align:right">
+                      <span class="CoveoFieldValue" data-field="@date" data-helper="dateTime" data-helper-options-include-time-if-this-week="false"></span>
+                    </div>
+                  </div>
+                  <div class="coveo-result-row">
+                    <div class="coveo-result-cell">
+                      <span class="CoveoExcerpt"></span>
+                    </div>
+                  </div>
+                  <div class="coveo-result-row">
+                    <div class="coveo-result-cell">
+                      <div class="field-table">
+                        <span class="CoveoFieldValue CoveoTags" data-field="@tags" data-facet="TagsFacet" data-split-values="true"></span>
+                      </div>
+                      <div style="clear:both;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </script>
+
+<script type="text/html" id="apiref" class="result-template" data-condition="raw.syssource=='Web Scraper - apisitecore30' || raw.syssource=='apices70' || raw.syssource=='apices65'">
+            <div class="coveo-result-frame">
+              <div class="coveo-result-row">
+                <div class="coveo-result-cell" style="width:16px; text-align:center; padding-top:5px">
+                  <div class='coveo-icon coveo-site-icon-apiref' title="api.developers.coveo.com topic"></div>
+                </div>
+                <div class="coveo-result-cell" style="padding-left:15px;">
+                  <div class="coveo-result-row">
+                    <div class="coveo-result-cell" style="font-size:18px;">
+                      <span class="CoveoFieldValue platformVersionBadge" title="Coveo Platform Version" data-field="@platformversion"></span>
+                      <a class="CoveoResultLink"></a>
+                      <div class="CoveoQuickview"></div></div>
+                  </div>
+                  <div class="coveo-result-row">
+                    <div class="coveo-result-cell">
+                      <span class="CoveoExcerpt"></span>
+                    </div>
+                  </div>
+                  <div class="coveo-result-row">
+                    <div class="coveo-result-cell">
+                      <div class="CoveoFieldValue ohBreadcrumb" data-field="@assemblyname" data-split-values="false" data-html-value="true"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </script>
+
+<script type="text/html" id="supportKB" class="result-template" data-condition="raw.syssource=='Salesforce - Knowledge - Coveo Support'">
+            <div class="coveo-result-frame">
+              <div class="coveo-result-row">
+                <div class="coveo-result-cell" style="width:16px; text-align:center; padding-top:5px">
+                  <div class='coveo-icon coveo-site-icon-website' title="Coveo Support KB articles"></div>
+                </div>
+                <div class="coveo-result-cell" style="padding-left:15px;">
+                  <div class="coveo-result-row">
+                    <div class="coveo-result-cell" style="font-size:18px;">
+                      <a class="CoveoResultLink"></a>
+                      <div class="CoveoQuickview"></div>
+                    </div>
+                    <div class="coveo-result-cell" style="width:150px; text-align:right">
+                      <span class="CoveoFieldValue" data-field="@date" data-helper="dateTime" data-helper-options-include-time-if-this-week="false"></span>
+                    </div>
+                  </div>
+                  <div class="coveo-result-row">
+                    <div class="coveo-result-cell">
+                      <span class="CoveoExcerpt"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </script>
+
+</div>
+<div class="CoveoPager"></div>
+</div>
+</div>
+</body>
+
+</html>
